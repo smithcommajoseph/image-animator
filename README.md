@@ -1,6 +1,6 @@
 # FlipBook [![Build Status](https://travis-ci.org/technicolorenvy/flipbook.png)](https://travis-ci.org/technicolorenvy/flipbook)
 
-I once worked on a site an animated movie that required this flip-book style component. I figured, if it was good enough for a high traffic, webby-winning site, it was good enough to share.
+I once worked on a site an animated movie that required this flip-book style component. I figured, if it was good enough for a high-traffic, webby-recognized site, it was good enough to share.
 
 ## Usage
 __(coming soon)__
