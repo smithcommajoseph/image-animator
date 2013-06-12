@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>FlipBook Examples</title>
+<link href="css/bootstrap.min.css" rel="stylesheet"/>
+<style>
+	.flip-book-image-sequence{
+		position: relative;
+	}
+	.flip-book-image-sequence img {
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+
+	.flip-book1,
+	.flip-book1 img {
+		width: 210px;
+		height: 164px;
+	}
+
+</style>
+
+<script type="text/javascript" src="../lib/flipbook.js"></script>
+
+</head>
+
+<body>
+	<div class="container">
+	<h1>FlipBook Examples</h1>
+
+	<p>FlipBook elements are extremely easy to set up an require little besides the images themselves. Below are a few simple examples.</p>
+
+	<p>A list of all available params and their defaults are available in the README <a href-"https://github.com/technicolorenvy/flipbook">here</a></p>
+
+	<ul>
+		<li><a href="#non-looping">Non Looping</a></li>
+		<li><a href="#looping">Looping</a></li>
+		<li><a href="#reuse">Accessing and Re-using a flipbook</a></li>
+	</ul>
+	<h2 id="non-looping">Non looping</h2>
+
+	<p>If you have the following HTML</p>
+
+<pre>&lt;div id="flip-book1" class="flip-book-image-sequence"&gt;
+	&lt;img src="images/Flipbook0001.jpg" alt="some alt"/&gt;
+	&lt;img src="images/Flipbook0002.jpg" alt="some alt"/&gt;
+	&lt;img src="images/Flipbook0003.jpg" alt="some alt"&gt;
+	...
+&lt;/div&gt;</pre>
+
+	<p>And your Javascript looks like so</p>
+
+<pre>var flipbook = new FlipBook({
+	el: document.getElementById('flip-book1'),
+	fps: 17
+});</pre>
+
+	<p>You'll get the following flipbook (reload if you missed it)</p>
+
+	<div id="flip-book1" class="flip-book-image-sequence flip-book1">
+		<img src="images/Flipbook0001.jpg" alt="some alt"/>
+		<img src="images/Flipbook0002.jpg" alt="some alt"/>
+		<img src="images/Flipbook0003.jpg" alt="some alt"/>
+		<img src="images/Flipbook0004.jpg" alt="some alt"/>
+		<img src="images/Flipbook0005.jpg" alt="some alt"/>
+		<img src="images/Flipbook0006.jpg" alt="some alt"/>
+		<img src="images/Flipbook0007.jpg" alt="some alt"/>
+		<img src="images/Flipbook0008.jpg" alt="some alt"/>
+		<img src="images/Flipbook0009.jpg" alt="some alt"/>
+		<img src="images/Flipbook0010.jpg" alt="some alt"/>
+		<img src="images/Flipbook0011.jpg" alt="some alt"/>
+		<img src="images/Flipbook0012.jpg" alt="some alt"/>
+		<img src="images/Flipbook0013.jpg" alt="some alt"/>
+		<img src="images/Flipbook0014.jpg" alt="some alt"/>
+		<img src="images/Flipbook0015.jpg" alt="some alt"/>
+		<img src="images/Flipbook0016.jpg" alt="some alt"/>
+		<img src="images/Flipbook0017.jpg" alt="some alt"/>
+		<img src="images/Flipbook0018.jpg" alt="some alt"/>
+	</div>
+
+	<h2 id="looping">Looping</h2>
+
+	<p>When creating a looping flipbook, you have a few more options, delay, loops.</p>
+
+	<p>Considering the following HTML</p>
+
+<pre>&lt;div id="flip-book2" class="flip-book-image-sequence"&gt;
+	&lt;img src="images/Flipbook0001.jpg" alt="some alt"/&gt;
+	&lt;img src="images/Flipbook0002.jpg" alt="some alt"/&gt;
+	&lt;img src="images/Flipbook0003.jpg" alt="some alt"&gt;
+	...
+&lt;/div&gt;</pre>
+
+	<p>And your Javascript looks like so</p>
+
+<pre>var flipbook = new FlipBook({
+	el: document.getElementById('flip-book1'),
+	fps: 17,
+	isLooping: true,
+	//loops: 10,        // will run indefinitely if loops is not set
+	//delay: 100        // sequences will run back to back, with no delay if not set
+});</pre>
+
+
+	<div id="flip-book2" class="flip-book-image-sequence flip-book1">
+		<img src="images/Flipbook0001.jpg" alt="some alt"/>
+		<img src="images/Flipbook0002.jpg" alt="some alt"/>
+		<img src="images/Flipbook0003.jpg" alt="some alt"/>
+		<img src="images/Flipbook0004.jpg" alt="some alt"/>
+		<img src="images/Flipbook0005.jpg" alt="some alt"/>
+		<img src="images/Flipbook0006.jpg" alt="some alt"/>
+		<img src="images/Flipbook0007.jpg" alt="some alt"/>
+		<img src="images/Flipbook0008.jpg" alt="some alt"/>
+		<img src="images/Flipbook0009.jpg" alt="some alt"/>
+		<img src="images/Flipbook0010.jpg" alt="some alt"/>
+		<img src="images/Flipbook0011.jpg" alt="some alt"/>
+		<img src="images/Flipbook0012.jpg" alt="some alt"/>
+		<img src="images/Flipbook0013.jpg" alt="some alt"/>
+		<img src="images/Flipbook0014.jpg" alt="some alt"/>
+		<img src="images/Flipbook0015.jpg" alt="some alt"/>
+		<img src="images/Flipbook0016.jpg" alt="some alt"/>
+		<img src="images/Flipbook0017.jpg" alt="some alt"/>
+		<img src="images/Flipbook0018.jpg" alt="some alt"/>
+	</div>
+
+
+	<h2 id="reuse">Accessing and Re-using a flipbook</h2>
+
+	<p>You may re-set properties on a FlipBook object at anytime as long as you are storing a reference. and since you have access to the object's play, stop, and continue methods, you can start the ball rolling again.</p>
+
+<pre>var flipbook = new FlipBook({
+	el: document.getElementById('flip-book1'),
+	fps: 17
+});
+
+// after done with playing...
+
+flipbook1.isLooping = true;
+flipbook1.play();
+</pre>
+
+
+<script type="text/javascript">
+	//leaving these guys exposed so folk can play around
+	var flipbook1 = new FlipBook({
+	  el: document.getElementById('flip-book1'),
+	  fps: 17
+	});
+
+	var flipbook2 = new FlipBook({
+		el: document.getElementById('flip-book2'),
+		fps: 17,
+		isLooping: true,
+		//loops: 10,        // will run indefinitely if loops is not set
+		//delay: 100        // sequences will run back to back, with no delay if not set
+	}); 
+</script>
+
+</div>
+</body>
+</html>
