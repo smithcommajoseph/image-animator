@@ -45,7 +45,7 @@ Optional function that is called when the flipBook object is done animating.
 
 
 ## Examples
-Check [link to come soon]() for more in-depth examples.
+Check [Here](http://technicolorenvy.github.io/flipbook/) for more in-depth examples.
 
 Consider the following.
 
@@ -86,7 +86,7 @@ The JS bit above does three things
 2. Sets the `isLooping` to `true`, so the image sequence will restart when it has completed 
 3. Sets the `fps` to `30` frames per second.
 
-Again, check [link to come soon]() for more in-depth examples.
+Again, check [Here](http://technicolorenvy.github.io/flipbook/) for more in-depth examples.
 
 ## Contributing
 If you have a bug fix or feature proposal, submit a pull request with a clear description of the change, plus tests.
