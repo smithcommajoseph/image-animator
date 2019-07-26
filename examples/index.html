@@ -4,45 +4,45 @@
 <title>FlipBook Examples</title>
 <link href="css/bootstrap.min.css" rel="stylesheet"/>
 <style>
-	.flip-book-image-sequence{
+	.image-animator-image-sequence{
 		position: relative;
 	}
-	.flip-book-image-sequence img {
+	.image-animator-image-sequence img {
 		position: absolute;
 		top: 0;
 		left: 0;
 	}
 
-	.flip-book1,
-	.flip-book1 img {
+	.image-animator-1,
+	.image-animator-1 img {
 		width: 210px;
 		height: 164px;
 	}
 
 </style>
 
-<script type="text/javascript" src="../lib/flipbook.js"></script>
+<script type="text/javascript" src="../lib/image-animator.js"></script>
 
 </head>
 
 <body>
 	<div class="container">
-	<h1>FlipBook Examples</h1>
+	<h1>ImageAnimator Examples</h1>
 
-	<p>FlipBook elements are extremely easy to set up an require little besides the images themselves. Below are a few simple examples.</p>
+	<p>ImageAnimator elements are extremely easy to set up an require little besides the images themselves. Below are a few simple examples.</p>
 
-	<p>A list of all available params and their defaults are available in the README <a href-"https://github.com/technicolorenvy/flipbook">here</a></p>
+	<p>A list of all available params and their defaults are available in the README <a href-"https://github.com/technicolorenvy/image-animator">here</a></p>
 
 	<ul>
 		<li><a href="#non-looping">Non Looping</a></li>
 		<li><a href="#looping">Looping</a></li>
-		<li><a href="#reuse">Accessing and Re-using a flipbook</a></li>
+		<li><a href="#reuse">Accessing and Re-using an image animation</a></li>
 	</ul>
 	<h2 id="non-looping">Non looping</h2>
 
 	<p>If you have the following HTML</p>
 
-<pre>&lt;div id="flip-book1" class="flip-book-image-sequence"&gt;
+<pre>&lt;div id="image-animator-1" class="image-animator-image-sequence"&gt;
 	&lt;img src="images/Flipbook0001.jpg" alt="some alt"/&gt;
 	&lt;img src="images/Flipbook0002.jpg" alt="some alt"/&gt;
 	&lt;img src="images/Flipbook0003.jpg" alt="some alt"&gt;
@@ -51,14 +51,14 @@
 
 	<p>And your Javascript looks like so</p>
 
-<pre>var flipbook = new FlipBook({
-	el: document.getElementById('flip-book1'),
+<pre>let imageAnimator = new ImageAnimator({
+	el: document.getElementById('image-animator-1'),
 	fps: 17
 });</pre>
 
 	<p>You'll get the following flipbook (reload if you missed it)</p>
 
-	<div id="flip-book1" class="flip-book-image-sequence flip-book1">
+	<div id="image-animator-1" class="image-animator-image-sequence image-animator-1">
 		<img src="images/Flipbook0001.jpg" alt="some alt"/>
 		<img src="images/Flipbook0002.jpg" alt="some alt"/>
 		<img src="images/Flipbook0003.jpg" alt="some alt"/>
@@ -85,7 +85,7 @@
 
 	<p>Considering the following HTML</p>
 
-<pre>&lt;div id="flip-book2" class="flip-book-image-sequence"&gt;
+<pre>&lt;div id="image-animator-2" class="image-animator-image-sequence"&gt;
 	&lt;img src="images/Flipbook0001.jpg" alt="some alt"/&gt;
 	&lt;img src="images/Flipbook0002.jpg" alt="some alt"/&gt;
 	&lt;img src="images/Flipbook0003.jpg" alt="some alt"&gt;
@@ -94,8 +94,8 @@
 
 	<p>And your Javascript looks like so</p>
 
-<pre>var flipbook = new FlipBook({
-	el: document.getElementById('flip-book1'),
+<pre>let imageAnimator = new ImageAnimator({
+	el: document.getElementById('image-animator-1'),
 	fps: 17,
 	isLooping: true,
 	//loops: 10,        // will run indefinitely if loops is not set
@@ -103,7 +103,7 @@
 });</pre>
 
 
-	<div id="flip-book2" class="flip-book-image-sequence flip-book1">
+	<div id="image-animator-2" class="image-animator-image-sequence image-animator-1">
 		<img src="images/Flipbook0001.jpg" alt="some alt"/>
 		<img src="images/Flipbook0002.jpg" alt="some alt"/>
 		<img src="images/Flipbook0003.jpg" alt="some alt"/>
@@ -129,27 +129,27 @@
 
 	<p>You may re-set properties on a FlipBook object at anytime as long as you are storing a reference. and since you have access to the object's play, stop, and continue methods, you can start the ball rolling again.</p>
 
-<pre>var flipbook = new FlipBook({
-	el: document.getElementById('flip-book1'),
+<pre>let imageAnimator = new ImageAnimator({
+	el: document.getElementById('image-animator-1'),
 	fps: 17
 });
 
 // after done with playing...
 
-flipbook1.isLooping = true;
-flipbook1.play();
+imageAnimator.isLooping = true;
+imageAnimator.play();
 </pre>
 
 
 <script type="text/javascript">
 	//leaving these guys exposed so folk can play around
-	var flipbook1 = new FlipBook({
-	  el: document.getElementById('flip-book1'),
+	let imageAnimator1 = new ImageAnimator({
+	  el: document.getElementById('image-animator-1'),
 	  fps: 17
 	});
 
-	var flipbook2 = new FlipBook({
-		el: document.getElementById('flip-book2'),
+	let imageAnimator2 = new ImageAnimator({
+		el: document.getElementById('image-animator-2'),
 		fps: 17,
 		isLooping: true,
 		//loops: 10,        // will run indefinitely if loops is not set

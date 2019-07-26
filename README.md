@@ -3,10 +3,21 @@
 [![NPM version][npm-image]][npm-url]
 [![Travis Build][travis-image]][travis-url]
 
-
 I once worked on a site for an animated movie that required this image-animator style component. I figure if it was good enough for a high-traffic, webby-recognized site; it was good enough to share.
 
 Weighing in at 2.2K (uncompressed), imageAnimator has zero dependencies, with the exception of the DOM, so you can pretty much plug and play. 
+
+## Install
+
+```sh
+npm i image-animator --save
+```
+
+or using yarn
+
+```sh
+yarn add image-animator
+```
 
 ## Usage
 
