@@ -1,32 +1,36 @@
 {
-  "name": "flipbook",
+  "name": "image-animator",
   "description": "A Simple image seqence player",
   "version": "0.1.0",
-  "homepage": "https://github.com/technicolorenvy/flipbook",
+  "homepage": "https://github.com/technicolorenvy/image-animator",
   "author": {
     "name": "Joseph (Jos) Smith",
-    "email": "technicolorenvy@gmail.com",
-    "url": "@technicolorenvy"
+    "email": "technicolorenvy@gmail.com"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/technicolorenvy/flipbook"
+    "url": "git://github.com/technicolorenvy/image-animator"
   },
   "bugs": {
-    "url": "https://github.com/technicolorenvy/flipbook/issues"
+    "url": "https://github.com/technicolorenvy/image-animator/issues"
   },
   "licenses": [
     {
       "type": "MIT",
-      "url": "https://github.com/technicolorenvy/flipbook/blob/master/LICENSE-MIT"
+      "url": "https://github.com/technicolorenvy/image-animator/blob/master/LICENSE-MIT"
     }
   ],
-  "main": "lib/flipbook",
+  "main": "lib/image-animator",
   "scripts": {
     "test": "mocha --reporter spec  ./test --recursive"
   },
   "devDependencies": {
     "mocha": "*",
     "should": "*"
-  }
+  },
+  "keywords": [
+    "image sequence",
+    "animation",
+    "flip book"
+  ]  
 }

@@ -1,47 +1,53 @@
-# FlipBook [![Build Status](https://travis-ci.org/technicolorenvy/flipbook.png)](https://travis-ci.org/technicolorenvy/flipbook)
+# Image Animator 
 
-I once worked on a site for an animated movie that required this flip-book style component. I figure if it was good enough for a high-traffic, webby-recognized site; it was good enough to share.
+[![NPM version][npm-image]][npm-url]
+[![Travis Build][travis-image]][travis-url]
 
-Weighing in at 2.2K (uncompressed) FlipBook does not have any dependencies, with the exception of the DOM, so you can plug and play. 
+
+I once worked on a site for an animated movie that required this image-animator style component. I figure if it was good enough for a high-traffic, webby-recognized site; it was good enough to share.
+
+Weighing in at 2.2K (uncompressed), imageAnimator has zero dependencies, with the exception of the DOM, so you can pretty much plug and play. 
 
 ## Usage
 
-Create a flipBook instance, by passing an opts object like so.
+Create a imageAnimator instance, by passing an opts object like so.
 
-    var flipbook = new FlipBook({el: SOME_DOM_NODE});
+```javascript
+let imageAnimator = new imageAnimator({el: SOME_DOM_NODE_THAT_CONTAINS_IMAGES});
+```
 
 Valid options are 
 
 #### el: `Object` (required)
-The DOM node that contains the images that we will be using in the flipbook.
+The DOM node that contains the images that we will be using in the imageAnimator.
 
-Accept a native JS element like `document.getElementById('flip-book-image-sequence')`.
+Accept a native JS element like `document.getElementById('image-animator-image-sequence')`.
 
 #### fps: `Number` (optional)
-The target frames per second of the flipbook animation
+The target frames per second of the imageAnimator animation
 
 default value: `24`
 
 #### delay: `Number` (optional)
-Amount of time (in milliseconds) that should pass between retarting the flipbook sequence (only evaluated if `isLooping` is set to `true`)
+Amount of time (in milliseconds) that should pass between retarting the imageAnimator sequence (only evaluated if `isLooping` is set to `true`)
 
 default value: `false`
 
 #### isLooping: `Boolean` (optional)
-Set to `true` if the flipbook sequence should restart after finishing
+Set to `true` if the imageAnimator sequence should restart after finishing
 
 default value: `false`
 
 #### loops: `Number` (optional)
-The max number of times the flipbook sequece should restart
+The max number of times the imageAnimator sequece should restart
 
 default value: `null`
 
 #### onInit: `Object` (optional)
-Optional function that is called when the flipBook object is initialized.
+Optional function that is called when the imageAnimator object is initialized.
 
 #### onComplete: `Object` (optional)
-Optional function that is called when the flipBook object is done animating.
+Optional function that is called when the imageAnimator object is done animating.
 
 
 ## Examples
@@ -53,12 +59,12 @@ Consider the following.
     <html>
     <head>
     <title>Example</title>
-    <script type="text/javascript" src="flipbook.js"></script>
+    <script type="text/javascript" src="imageAnimator.js"></script>
     </head>
 
     <body>
-      <h1>FlipBook example</h1>
-      <div id="flip-book-image-sequence">
+      <h1>imageAnimator example</h1>
+      <div id="image-animator-image-sequence">
         <img src="img1.png" alt="some alt"/>
         <img src="img2.png" alt="some alt"/>
         <img src="img3.png" alt="some alt"/>
@@ -70,8 +76,8 @@ Consider the following.
 
     <script type="text/javascript">
       (function(){
-        var flipbook = new FlipBook({
-          el: document.getElementById('flip-book-image-sequence'),
+        var imageAnimator = new imageAnimator({
+          el: document.getElementById('image-animator-image-sequence'),
           isLooping: true,
           fps: 30
         });
@@ -82,15 +88,19 @@ Consider the following.
 
 The JS bit above does three things
 
-1. Creates an instance of `FlipBook` named `flipBook` and passes the the `#flip-book-image-sequence` div as the `el` property.
+1. Creates an instance of `imageAnimator` named `imageAnimator` and passes the the `#image-animator-image-sequence` div as the `el` property.
 2. Sets the `isLooping` to `true`, so the image sequence will restart when it has completed 
 3. Sets the `fps` to `30` frames per second.
-
-Again, check [Here](http://technicolorenvy.github.io/flipbook/) for more in-depth examples.
 
 ## Contributing
 If you have a bug fix or feature proposal, submit a pull request with a clear description of the change, plus tests.
 
 ## License
-Copyright (c) 2013 Joseph (Jos) Smith  
-Licensed under the MIT license.
+
+MIT © Joseph (Jos) Smith
+
+[npm-url]: https://npmjs.org/package/image-animator
+[npm-image]: https://img.shields.io/npm/v/image-animator.svg?style=flat-square
+
+[travis-url]: https://travis-ci.org/technicolorenvy/image-animator
+[travis-image]: https://img.shields.io/travis/technicolorenvy/image-animator.svg?style=flat-square
