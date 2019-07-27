@@ -3,11 +3,12 @@
 [![NPM version][npm-image]][npm-url]
 [![Travis Build][travis-image]][travis-url]
 
-I once worked on a site for an animated movie that required this image-animator style component. I figure if it was good enough for a high-traffic, webby-recognized site; it was good enough to share.
+I once worked on a site for an animated movie that required this low-res style image animation component. I figure if it was good enough for a high-traffic, webby-recognized site; it was good enough to share.
 
-Weighing in at 2.2K (uncompressed), imageAnimator has zero dependencies, with the exception of the DOM, so you can pretty much plug and play. 
+Weighing in at 2.2K (uncompressed), ImageAnimator has zero dependencies, with the exception of the DOM, so you can pretty much plug and play. 
 
 ## Install
+
 
 ```sh
 npm i image-animator --save
@@ -18,6 +19,8 @@ or using yarn
 ```sh
 yarn add image-animator
 ```
+
+**Note: If using a package manager (recommended) you will _likely_ want to integrate w/ your own build tools. However, the `dist` directory contains prebuilt versions of the project for easy inclusion in a web page.**
 
 ## Usage
 
@@ -70,7 +73,7 @@ Consider the following.
     <html>
     <head>
     <title>Example</title>
-    <script type="text/javascript" src="imageAnimator.js"></script>
+    <script type="text/javascript" src="browserified-image-animator.min.js"></script>
     </head>
 
     <body>

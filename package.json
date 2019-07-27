@@ -22,11 +22,15 @@
   ],
   "main": "lib/image-animator",
   "scripts": {
-    "test": "mocha --reporter spec  ./test --recursive"
+    "test": "mocha --reporter spec  ./test --recursive",
+    "build": "./node_modules/browserify/bin/cmd.js lib/image-animator.js -o dist/browserified-image-animator.js && ./node_modules/terser/bin/uglifyjs dist/browserified-image-animator.js -c -o dist/browserified-image-animator.min.js"
   },
   "devDependencies": {
+    "browserify": "^16.3.0",
     "mocha": "*",
-    "should": "*"
+    "should": "*",
+    "terser": "^4.1.2",
+    "uglify-js": "^3.6.0"
   },
   "keywords": [
     "image sequence",
