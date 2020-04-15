@@ -26,11 +26,11 @@
     "build": "./node_modules/browserify/bin/cmd.js lib/image-animator.js -o dist/browserified-image-animator.js && ./node_modules/terser/bin/uglifyjs dist/browserified-image-animator.js -c -o dist/browserified-image-animator.min.js"
   },
   "devDependencies": {
-    "browserify": "^16.3.0",
-    "mocha": "*",
-    "should": "*",
-    "terser": "^4.1.2",
-    "uglify-js": "^3.6.0"
+    "browserify": "16.5.1",
+    "mocha": "7.1.1",
+    "should": "13.2.3",
+    "terser": "4.6.11",
+    "uglify-js": "3.9.1"
   },
   "keywords": [
     "image sequence",

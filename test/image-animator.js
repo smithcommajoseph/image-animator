@@ -18,6 +18,8 @@ describe('ImageAnimator', () => {
     imageAnimator.should.have.property('onComplete');
 
     //check w/ some passed vals
+    // everything from this point on will cause the test to fail
+    // not a high priority to fix at this time - jws
     imageAnimator = new ImageAnimator({
       el: 'moop',
       fps: 10,
